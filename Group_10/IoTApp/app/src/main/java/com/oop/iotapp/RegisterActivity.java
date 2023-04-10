@@ -22,11 +22,6 @@ public class RegisterActivity extends AppCompatActivity {
     private Button bt_register;
     private TextView tv_loginForward;
 
-    private String username;
-    private String email;
-    private String password;
-    private String repassword;
-
     private DBHandler dbHandler;
 
     @Override
@@ -60,10 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(login);
     }
     private void registerClick() {
-        username = et_username.getText().toString();
-        email = et_email.getText().toString();
-        password = et_password.getText().toString();
-        repassword = et_repassword.getText().toString();
+        String username = et_username.getText().toString();
+        String email = et_email.getText().toString();
+        String password = et_password.getText().toString();
+        String repassword = et_repassword.getText().toString();
 
         if (username.equals("") || email.equals("") || password.equals("") || repassword.equals("")) {
             Toast.makeText(this, "Không được để trống trường nào!", Toast.LENGTH_SHORT).show();
