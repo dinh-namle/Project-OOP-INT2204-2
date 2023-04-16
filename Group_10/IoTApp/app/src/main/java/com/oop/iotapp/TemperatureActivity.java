@@ -16,6 +16,8 @@ import com.google.android.material.slider.Slider;
 
 public class TemperatureActivity extends AppCompatActivity {
 
+    private TemperatureData temperatureData;
+
     private MaterialRadioButton rb_mode_on, rb_mode_off, rb_eco_on, rb_eco_off, rb_timer_on, rb_timer_off;
     private Slider sl_fanSpeed, sl_temperature;
     private MaterialCardView cv_back;
@@ -28,7 +30,6 @@ public class TemperatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_temperature);
 
         initViews();
-
 
     }
 

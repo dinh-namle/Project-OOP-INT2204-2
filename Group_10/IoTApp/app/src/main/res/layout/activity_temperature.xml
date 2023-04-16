@@ -87,9 +87,22 @@
             android:orientation="vertical">
 
             <TextView
+                android:textStyle="bold"
+                android:id="@+id/textview_name_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:text="Tên thiết bị"
+                android:textAlignment="viewStart"
+                android:textColor="@color/third_light"
+                android:textSize="20sp" />
+
+            <TextView
+                android:textStyle="bold"
                 android:id="@+id/textview_status_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/textview_name_temp"
                 android:layout_marginVertical="15dp"
                 android:text="Trạng thái"
                 android:textAlignment="viewStart"
@@ -97,6 +110,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/textview_temperature_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,6 +122,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/textview_fanSpeed_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,6 +134,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/textview_eco_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,6 +146,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/textview_timer_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,9 +212,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_status"
-                android:layout_centerHorizontal="true"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
+                android:layout_marginTop="2dp"
                 android:stepSize="1.0"
                 android:valueFrom="16.0"
                 android:valueTo="30.0" />

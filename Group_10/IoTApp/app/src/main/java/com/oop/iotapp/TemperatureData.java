@@ -1,10 +1,11 @@
 package com.oop.iotapp;
 
 public class TemperatureData {
-    private Long userId, status, temperature, fanSpeed, ecoMode, timerMode;
+    private Long id, userId, status, temperature, fanSpeed, ecoMode, timerMode;
     private String timerStart, timerStop;
 
     public TemperatureData(){
+        this.id = 0L;
         this.userId = 0L;
         this.status = 0L;
         this.temperature = 0L;
@@ -15,7 +16,7 @@ public class TemperatureData {
         this.timerStop = "#";
     }
 
-    public TemperatureData(Long userId, Long status, Long temperature, Long fanSpeed, Long ecoMode, Long timerMode, String timerStart, String timerStop) {
+    public TemperatureData(Long id, Long userId, Long status, Long temperature, Long fanSpeed, Long ecoMode, Long timerMode, String timerStart, String timerStop) {
         this.userId = userId;
         this.status = status;
         this.temperature = temperature;
@@ -24,6 +25,15 @@ public class TemperatureData {
         this.timerMode = timerMode;
         this.timerStart = timerStart;
         this.timerStop = timerStop;
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getUserId() {

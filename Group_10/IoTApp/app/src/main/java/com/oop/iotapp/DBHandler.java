@@ -156,6 +156,26 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public TemperatureData getTemperature(Long userId){
+        TemperatureData temperatureData = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TEMPERATURE_TABLE_NAME  + " WHERE " + TEMPERATURE_USER_ID_COL + " = " + userId, null);
+        if (cursor.moveToFirst()){
+            Long id = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_ID_COL));
+            Long status = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_STATUS_COL));
+            Long temperature = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_TEMP_COL));
+            Long fanSpeed = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_FANSPEED_COL));
+            Long eco = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_ECO_COL));
+            Long timer = cursor.getLong(cursor.getColumnIndexOrThrow(TEMPERATURE_TIMER_COL));
+            String timerStart = cursor.getString(cursor.getColumnIndexOrThrow(TEMPERATURE_TIMER_START_COL));
+            String timerStop = cursor.getString(cursor.getColumnIndexOrThrow(TEMPERATURE_TIMER_STOP_COL));
+            temperatureData = new TemperatureData(id, userId, status, temperature, fanSpeed, eco, timer, timerStart, timerStop);
+        }
+        cursor.close();
+        db.close();
+        return temperatureData;
+    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
